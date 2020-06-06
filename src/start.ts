@@ -5,7 +5,7 @@ import Connection from './database/Connection';
 import { Logger } from '@overnightjs/logger';
 
 Connection.getInstance();
-let connection = Connection.getInstance().getConnection().then( () => {
+Connection.getInstance().getConnection().then( () => {
   Logger.Imp("System Connected to Database");
 })
 
