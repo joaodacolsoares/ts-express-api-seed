@@ -2,7 +2,6 @@
   "compilerOptions": {
     "module": "commonjs",
     "strict": true,
-    "baseUrl": "./",
     "outDir": "dist",
     "removeComments": true,
     "experimentalDecorators": true,
@@ -11,6 +10,12 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "strictPropertyInitialization": false,
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
+    },
     "types": [
       "node"
     ],
@@ -19,7 +24,7 @@
     ]
   },
   "include": [
-    "./src/**/*.ts"
+    "src/**/*"
   ],
   "exclude": [
     "./src/public/"
