@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Photo } from './Photo';
 
 @Entity()
 export class User {
-
   constructor(firstName: string, lastName: string, isActive: boolean) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -10,7 +10,7 @@ export class User {
   }
 
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
 
   @Column()
   firstName: string;
@@ -20,4 +20,7 @@ export class User {
 
   @Column()
   isActive: boolean;
+
+  @OneToMany(type => Photo, photo => photo.owner)
+  photos: Photo[];
 }
