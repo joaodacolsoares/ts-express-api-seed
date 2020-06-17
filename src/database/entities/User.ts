@@ -3,10 +3,11 @@ import { Photo } from './Photo';
 
 @Entity()
 export class User {
-  constructor(firstName: string, lastName: string, isActive: boolean) {
+  constructor(firstName: string, lastName: string, isActive: boolean, photos: Photo[]) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.isActive = isActive;
+    this.photos = photos;
   }
 
   @PrimaryGeneratedColumn()
